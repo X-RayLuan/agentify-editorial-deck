@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,68 +12,49 @@
     --accent:#C1553C; --accent-2:#A8432D; --accent-soft:#F6E9E2;
     --line:#E4DBCB; --line-2:#EFE9DC;
     --serif-en:"Playfair Display",Georgia,serif;
-    --serif:"Noto Serif SC",serif;
-    --sans:"Noto Sans SC",-apple-system,sans-serif;
+    --serif:"Playfair Display","Noto Serif SC",serif;
+    --sans:"Inter","Noto Sans SC",-apple-system,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
   html,body{height:100%;}
   body{font-family:var(--sans);color:var(--ink);background:var(--ink);overflow:hidden;}
-
-  /* deck engine */
   .deck{display:flex;height:100vh;width:100vw;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;}
   .deck::-webkit-scrollbar{display:none;}
   .slide{flex:0 0 100vw;height:100vh;scroll-snap-align:start;background:var(--paper);
     display:flex;flex-direction:column;padding:5.2vh 5.6vw 4vh;position:relative;overflow:hidden;}
   .slide.dark{background:#1a1712;color:var(--paper);}
-
-  /* chrome */
   .chrome{display:flex;justify-content:space-between;align-items:baseline;
     font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);}
   .chrome .brand{color:var(--accent);font-weight:600;}
   .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;
     font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);}
-
-  /* type */
   .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:600;}
-  .h1{font-family:var(--serif);font-weight:700;font-size:3.9vw;line-height:1.12;letter-spacing:-.01em;margin-top:1.6vh;}
+  .h1{font-family:var(--serif);font-weight:700;font-size:3.7vw;line-height:1.12;letter-spacing:-.01em;margin-top:1.6vh;}
   .h1 .hl,.disp .hl{color:var(--accent);}
-  .disp{font-family:var(--serif);font-weight:700;font-size:5.4vw;line-height:1.06;letter-spacing:-.01em;}
-  .sub{font-family:var(--sans);font-weight:400;font-size:1.32vw;line-height:1.6;color:var(--ink-2);margin-top:1.6vh;max-width:62vw;}
+  .disp{font-family:var(--serif);font-weight:700;font-size:5.2vw;line-height:1.06;letter-spacing:-.01em;}
+  .sub{font-family:var(--sans);font-weight:400;font-size:1.3vw;line-height:1.6;color:var(--ink-2);margin-top:1.6vh;max-width:66vw;}
   .en-i{font-family:var(--serif-en);font-style:italic;}
   .body{font-size:1.02vw;line-height:1.7;color:var(--ink-2);}
-  .lead{font-family:var(--serif);font-size:1.7vw;line-height:1.45;}
-
+  .lead{font-family:var(--serif);font-size:1.6vw;line-height:1.45;}
   .content{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;min-height:0;}
   .row{display:flex;gap:1.4vw;}
   .grid{display:grid;gap:1.3vw;}
-
-  /* cards */
   .card{background:var(--card);border-radius:16px;padding:2.2vh 1.5vw;box-shadow:0 6px 26px rgba(60,40,20,.06);}
-  .card .t{font-family:var(--serif);font-weight:600;font-size:1.35vw;}
-  .card .d{font-size:.95vw;line-height:1.6;color:var(--ink-2);margin-top:.8vh;}
+  .card .t{font-family:var(--serif);font-weight:700;font-size:1.3vw;}
+  .card .d{font-size:.92vw;line-height:1.6;color:var(--ink-2);margin-top:.8vh;}
   .num-e{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:600;}
-  .en-label{font-family:var(--serif-en);font-style:italic;font-weight:600;font-size:1.5vw;}
-
-  /* stat */
-  .stat .n{font-family:var(--serif-en);font-weight:800;font-size:5.2vw;line-height:.9;color:var(--accent);letter-spacing:-.02em;}
+  .stat .n{font-family:var(--serif-en);font-weight:800;font-size:5vw;line-height:.9;color:var(--accent);letter-spacing:-.02em;}
   .stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-top:.8vh;}
-  .pill{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  .pill{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
     padding:5px 12px;border:1px solid var(--accent);color:var(--accent);border-radius:20px;}
-
   .accent-bar{background:var(--accent);color:#fff;border-radius:14px;padding:2.4vh 2vw;text-align:center;}
-  .accent-bar .t{font-family:var(--serif);font-weight:700;font-size:1.9vw;}
+  .accent-bar .t{font-family:var(--serif);font-weight:700;font-size:1.8vw;}
   .accent-bar .d{font-size:1vw;opacity:.9;margin-top:.7vh;}
-
-  .ghost{position:absolute;font-family:var(--serif-en);font-weight:900;font-size:32vw;line-height:.8;
-    color:var(--accent);opacity:.05;right:2vw;bottom:-4vh;pointer-events:none;}
-
-  /* nav counter */
   .counter{position:fixed;bottom:2.4vh;left:50%;transform:translateX(-50%);z-index:50;
     font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--ink-2);
     background:rgba(255,255,255,.8);backdrop-filter:blur(6px);padding:6px 16px;border-radius:20px;border:1px solid var(--line);}
   .hint{position:fixed;bottom:2.4vh;right:2.4vw;z-index:50;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;}
-  @media (max-width:900px){ .disp{font-size:8vw} .h1{font-size:6.5vw} .sub{font-size:3.4vw;max-width:88vw} .card .t{font-size:3.4vw} .card .d{font-size:2.5vw} }
 </style>
 </head>
 <body>
@@ -85,28 +66,28 @@
     <div class="content">
       <div class="kicker">Operating Systems for AI Teams</div>
       <div class="disp" style="margin-top:2vh;">Your enterprise,<br><span class="en-i hl">agentified.</span></div>
-      <div class="lead" style="margin-top:2.4vh;">不卖工具——直接交付一支<span style="color:var(--accent)">会上班的 AI 岗位团队</span>。</div>
+      <div class="lead" style="margin-top:2.4vh;">We don't sell tools — we deliver a team of <span style="color:var(--accent)">AI coworkers who actually show up and do the work</span>.</div>
       <div class="row" style="margin-top:5vh;gap:4vw;">
         <div class="stat"><div class="n">5–10×</div><div class="l">Efficiency</div></div>
-        <div class="stat"><div class="n">1/3</div><div class="l">Cost</div></div>
-        <div class="stat"><div class="n">15<span style="font-size:2.6vw"> 天</span></div><div class="l">Time to live</div></div>
+        <div class="stat"><div class="n">⅓</div><div class="l">Cost</div></div>
+        <div class="stat"><div class="n">15<span style="font-size:2.4vw"> days</span></div><div class="l">Time to live</div></div>
       </div>
     </div>
-    <div class="foot"><span>Ray Luan · CEO</span><span>01 / 18</span></div>
+    <div class="foot"><span>Ray Luan · CEO</span><span>01 / 17</span></div>
   </section>
 
   <!-- 02 FOUNDING TEAM -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 01 · FOUNDING TEAM</span></div>
     <div class="content">
-      <div class="h1">业内罕有的 <span class="hl">「AI × 出海 × 阿里云 × 字节」</span> 复合阵容。</div>
-      <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:3.4vh;">
-        <div class="card"><div class="num-e">CEO</div><div class="t">Ray Luan</div><div class="d">— 前端工程师出身<br>— 前汽车之家 VP · 前字节跳动 VP<br>— 跨境电商年收 2 亿美金<br>— AI 产品服务全球 5 万+ B 端</div></div>
-        <div class="card"><div class="num-e">CTO</div><div class="t">Robin</div><div class="d">— AI Builder · 微软 MVP<br>— 阿里云创始团队专家<br>— 孵化品牌累计流量 9 亿+<br>— 千人团队 SOP 体系搭建</div></div>
-        <div class="card"><div class="num-e">PRODUCT MARKETING</div><div class="t">张涛</div><div class="d">— 阿里云资深专家（16 年）<br>— 企业数智化转型专家<br>— 主导云服务生态及数据 AI 产品<br>— 累计服务百万 B 端客户</div></div>
+      <div class="h1">A rare blend of <span class="hl">AI × global expansion × Alibaba Cloud × ByteDance</span>.</div>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:3vh;">
+        <div class="card"><div class="num-e">CEO</div><div class="t">Ray Luan</div><div class="d">— Engineer by training<br>— Ex-VP, ByteDance · Ex-VP, Autohome (NYSE: ATHM)<br>— Built a cross-border business to $200M revenue<br>— AI products serving 50,000+ B2B customers worldwide</div></div>
+        <div class="card"><div class="num-e">CTO</div><div class="t">Robin</div><div class="d">— AI Builder · Microsoft MVP<br>— Founding-team expert, Alibaba Cloud<br>— 900M+ cumulative traffic across incubated brands<br>— SOP systems for 1,000-person teams</div></div>
+        <div class="card"><div class="num-e">PARTNER · ORG DEVELOPMENT</div><div class="t">Danny Wang</div><div class="d">— Senior Partner, Cornerstone Consulting & Seeding Asia<br>— 20 yrs in finance & org-development consulting; led international teams and China GTM<br>— Global leadership development, executive 1:1 coaching, corporate-university capability building<br>— 10+ OD & coaching certifications (CTI Co-Active, Action Learning, IPT, Yalom Group, Learning Agility)<br>— Clients: Alibaba · ByteDance · Tencent · Microsoft · Novartis · AstraZeneca · AbbVie</div></div>
       </div>
     </div>
-    <div class="foot"><span>Founding Team</span><span>02 / 18</span></div>
+    <div class="foot"><span>Founding Team</span><span>02 / 17</span></div>
   </section>
 
   <!-- 03 MANIFESTO -->
@@ -114,210 +95,210 @@
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span style="color:#8a8272">MANIFESTO</span></div>
     <div class="content" style="align-items:flex-start;">
       <div style="font-family:var(--serif-en);font-size:9vw;color:var(--accent);line-height:.6;">“</div>
-      <div class="disp" style="color:var(--paper);max-width:80vw;">像招人一样招 AI<br>像管理团队一样 <span class="hl">管理 AI</span>。</div>
+      <div class="disp" style="color:var(--paper);max-width:82vw;">Hire AI like you hire people.<br>Manage AI like you <span class="hl">manage a team</span>.</div>
       <div class="kicker" style="margin-top:4vh;">Agentify AI · Manifesto</div>
     </div>
-    <div class="foot" style="color:#8a8272"><span>Manifesto</span><span>03 / 18</span></div>
+    <div class="foot" style="color:#8a8272"><span>Manifesto</span><span>03 / 17</span></div>
   </section>
 
   <!-- 04 STATE OF ENTERPRISE AI -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 02 · THE STATE OF ENTERPRISE AI</span></div>
     <div class="content">
-      <div class="h1">模型够强了。<br>但 <span class="hl">最后一公里塌方</span> 了。</div>
+      <div class="h1">The models are strong enough.<br>It's the <span class="hl">last mile that's collapsing</span>.</div>
       <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:3.4vh;">
-        <div class="card"><div class="num-e">01</div><div class="t">AI 只会答，不会干。</div><div class="d">市面上的 Copilot 是「问答助手」，不是「员工」。会回答，但没法独立完成一个业务流程。</div></div>
-        <div class="card"><div class="num-e">02</div><div class="t">AI 不懂你公司。</div><div class="d">知识散落在飞书 / Notion / Slack / 邮箱，AI 读不到组织记忆，每次都从零开始。</div></div>
-        <div class="card"><div class="num-e">03</div><div class="t">AI 没人帮你落地。</div><div class="d">SaaS 卖完就走，客户独自面对集成、流程、变革管理，POC 永远进不了核心业务流程。</div></div>
+        <div class="card"><div class="num-e">01</div><div class="t">AI answers, but doesn't act.</div><div class="d">Today's copilots are Q&A assistants, not employees — they respond, but can't own an end-to-end workflow.</div></div>
+        <div class="card"><div class="num-e">02</div><div class="t">AI doesn't know your company.</div><div class="d">Knowledge is scattered across Feishu / Notion / Slack / email; AI can't read your org memory and starts from zero every time.</div></div>
+        <div class="card"><div class="num-e">03</div><div class="t">No one helps you land it.</div><div class="d">SaaS sells and leaves; you face integration, process and change management alone, and the POC never reaches core operations.</div></div>
       </div>
     </div>
-    <div class="foot"><span>The State of Enterprise AI</span><span>04 / 18</span></div>
+    <div class="foot"><span>The State of Enterprise AI</span><span>04 / 17</span></div>
   </section>
 
   <!-- 05 THE TRINITY -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 03 · THE TRINITY</span></div>
     <div class="content">
-      <div class="h1">三件一起交付，<br>才是 <span class="hl">「AI 团队」</span>。</div>
+      <div class="h1">Deliver all three together —<br>that's an <span class="hl">"AI team"</span>.</div>
       <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:3.2vh;">
-        <div class="card"><div class="num-e">PRODUCT ①</div><div class="t">OpenClaw / AI Team</div><div class="en-label" style="font-size:1vw;color:var(--accent)">— 动手的肌肉</div><div class="d">会干活的 AI 员工——客服 / 销售 / 研发 / 法务 / 行政。底层 OpenClaw 多 Agent 编排引擎，每个 Agent 有 KPI、工作记录、可升可降。</div></div>
-        <div class="card"><div class="num-e">PRODUCT ②</div><div class="t">Enterprise Knowledge Wiki</div><div class="en-label" style="font-size:1vw;color:var(--accent)">— 记忆的中枢</div><div class="d">组织的大脑。一键接入飞书 / Notion / Slack / Jira / Salesforce，自动构建企业知识图谱，权限继承，事实可溯源，杜绝幻觉。</div></div>
-        <div class="card"><div class="num-e">PRODUCT ③</div><div class="t">Forward Deployment Engineer</div><div class="en-label" style="font-size:1vw;color:var(--accent)">— 落地的双手</div><div class="d">我们抄了 Palantir 最贵的那一招。FDE 驻场，三角身份：Coach / Co-PM / Optimizer。15 天上线，不是售后，是常驻战友。</div></div>
+        <div class="card"><div class="num-e">PRODUCT ①</div><div class="t">OpenClaw / AI Team</div><div class="d" style="color:var(--accent);font-style:italic">— the hands that do the work</div><div class="d">AI coworkers — support / sales / R&D / legal / admin. Powered by OpenClaw's multi-agent orchestration; every agent has KPIs, a work log, and can be promoted or replaced.</div></div>
+        <div class="card"><div class="num-e">PRODUCT ②</div><div class="t">Enterprise Knowledge Wiki</div><div class="d" style="color:var(--accent);font-style:italic">— the memory</div><div class="d">Your org's brain. One-click into Feishu / Notion / Slack / Jira / Salesforce; an auto-built knowledge graph, inherited permissions, traceable facts, zero hallucination.</div></div>
+        <div class="card"><div class="num-e">PRODUCT ③</div><div class="t">Forward Deployment Engineer</div><div class="d" style="color:var(--accent);font-style:italic">— the hands that land it</div><div class="d">We copied Palantir's most expensive move. An on-site FDE with a triple role: Coach / Co-PM / Optimizer. Live in 15 days — not after-sales, a resident teammate.</div></div>
       </div>
     </div>
-    <div class="foot"><span>The Trinity</span><span>05 / 18</span></div>
+    <div class="foot"><span>The Trinity</span><span>05 / 17</span></div>
   </section>
 
   <!-- 06 JOB ROSTER -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 04 · OPENCLAW JOB ROSTER</span></div>
     <div class="content">
-      <div class="h1">不卖工具，<br>只卖 <span class="hl">「岗位能力」</span>。</div>
+      <div class="h1">We don't sell tools —<br>we sell <span class="hl">job functions</span>.</div>
       <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:3.2vh;gap:1vw;">
-        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·01</div><div class="t" style="font-size:1.15vw">AI 客服员</div><div class="d" style="font-size:.82vw">7×24 接待 · 咨询答复 · 售后处理</div></div>
-        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·02</div><div class="t" style="font-size:1.15vw">AI 销售员</div><div class="d" style="font-size:.82vw">线索挖掘 · 客户跟进 · 转化支持</div></div>
-        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·03</div><div class="t" style="font-size:1.15vw">AI 内容员</div><div class="d" style="font-size:.82vw">内容生产 · 图片生成</div></div>
-        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·04</div><div class="t" style="font-size:1.15vw">AI 内容审核员</div><div class="d" style="font-size:.82vw">风险识别 · 合规把控 · 内容审查</div></div>
-        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·05</div><div class="t" style="font-size:1.15vw">AI 程序员</div><div class="d" style="font-size:.82vw">代码编写 · Bug 修复 · 技术支持</div></div>
-        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·06</div><div class="t" style="font-size:1.15vw">AI 法务助理</div><div class="d" style="font-size:.82vw">合同审阅 · 风险提示 · 基础法务</div></div>
-        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·07</div><div class="t" style="font-size:1.15vw">AI 行政助理</div><div class="d" style="font-size:.82vw">日程管理 · 报销审核 · 流程协助</div></div>
-        <div class="card" style="padding:1.8vh 1.1vw;background:var(--accent-soft);border:1px dashed var(--accent)"><div class="num-e">＋</div><div class="t" style="font-size:1.15vw;color:var(--accent)">更多岗位</div><div class="d" style="font-size:.82vw">按业务定制扩编</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·01</div><div class="t" style="font-size:1.1vw">AI Support</div><div class="d" style="font-size:.8vw">7×24 reception · Q&A · after-sales</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·02</div><div class="t" style="font-size:1.1vw">AI Sales</div><div class="d" style="font-size:.8vw">lead mining · follow-up · conversion</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·03</div><div class="t" style="font-size:1.1vw">AI Content</div><div class="d" style="font-size:.8vw">content production · image generation</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·04</div><div class="t" style="font-size:1.1vw">AI Moderation</div><div class="d" style="font-size:.8vw">risk detection · compliance · review</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·05</div><div class="t" style="font-size:1.1vw">AI Engineer</div><div class="d" style="font-size:.8vw">coding · bug fixes · tech support</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·06</div><div class="t" style="font-size:1.1vw">AI Legal Assistant</div><div class="d" style="font-size:.8vw">contract review · risk flags · basic legal</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw"><div class="num-e">A·07</div><div class="t" style="font-size:1.1vw">AI Admin</div><div class="d" style="font-size:.8vw">scheduling · expense review · process support</div></div>
+        <div class="card" style="padding:1.8vh 1.1vw;background:var(--accent-soft);border:1px dashed var(--accent)"><div class="num-e">＋</div><div class="t" style="font-size:1.1vw;color:var(--accent)">More roles</div><div class="d" style="font-size:.8vw">custom-built to your business</div></div>
       </div>
     </div>
-    <div class="foot"><span>OpenClaw Job Roster</span><span>06 / 18</span></div>
+    <div class="foot"><span>OpenClaw Job Roster</span><span>06 / 17</span></div>
   </section>
 
   <!-- 07 ENTERPRISE KNOWLEDGE WIKI -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 05 · ENTERPRISE KNOWLEDGE WIKI</span></div>
     <div class="content">
-      <div class="h1">让 AI 第一天上班<br>就 <span class="hl">读懂你公司</span>。</div>
+      <div class="h1">So AI understands your company<br><span class="hl">on day one</span>.</div>
       <div class="row" style="margin-top:3vh;gap:2vw;align-items:stretch;">
         <div class="grid" style="grid-template-columns:1fr 1fr;flex:1;gap:1.2vw;">
-          <div class="card"><div class="t" style="font-size:1.2vw;color:var(--accent)">一键接入</div><div class="d">飞书 · 钉钉 · Notion · Confluence · Slack · Gmail · SharePoint · Jira · Salesforce · GitHub</div></div>
-          <div class="card"><div class="t" style="font-size:1.2vw;color:var(--accent)">知识图谱</div><div class="d">自动构建：产品、客户、合同、流程、人、决策全部结构化。</div></div>
-          <div class="card"><div class="t" style="font-size:1.2vw;color:var(--accent)">权限继承</div><div class="d">员工看得到的，Agent 才看得到。员工看不到的，Agent 永远看不到。</div></div>
-          <div class="card"><div class="t" style="font-size:1.2vw;color:var(--accent)">事实溯源</div><div class="d">每条 AI 输出可点回原始文档段落——杜绝幻觉。</div></div>
+          <div class="card"><div class="t" style="font-size:1.15vw;color:var(--accent)">One-click connect</div><div class="d">Feishu · DingTalk · Notion · Confluence · Slack · Gmail · SharePoint · Jira · Salesforce · GitHub</div></div>
+          <div class="card"><div class="t" style="font-size:1.15vw;color:var(--accent)">Knowledge graph</div><div class="d">Auto-structures products, customers, contracts, processes, people, and decisions.</div></div>
+          <div class="card"><div class="t" style="font-size:1.15vw;color:var(--accent)">Inherited permissions</div><div class="d">What an employee can see, the agent can see. What they can't, the agent never can.</div></div>
+          <div class="card"><div class="t" style="font-size:1.15vw;color:var(--accent)">Fact tracing</div><div class="d">Every AI output links back to the source passage — no hallucination.</div></div>
         </div>
         <div class="card" style="flex:0 0 22vw;display:flex;flex-direction:column;justify-content:center;background:var(--ink);color:var(--paper)">
-          <div class="d" style="color:#b8b0a2;font-size:1vw">Notion 是给「人」看的 Wiki。</div>
-          <div class="t" style="font-size:1.7vw;color:var(--paper);margin-top:1.4vh">Enterprise Knowledge Wiki 是给 <span style="color:var(--accent)">「Agent」</span> 用的 Wiki。</div>
+          <div class="d" style="color:#b8b0a2;font-size:1vw">Notion is a wiki for <em>humans</em>.</div>
+          <div class="t" style="font-size:1.6vw;color:var(--paper);margin-top:1.4vh">Enterprise Knowledge Wiki is a wiki for <span style="color:var(--accent)">agents</span>.</div>
         </div>
       </div>
     </div>
-    <div class="foot"><span>Enterprise Knowledge Wiki</span><span>07 / 18</span></div>
+    <div class="foot"><span>Enterprise Knowledge Wiki</span><span>07 / 17</span></div>
   </section>
 
-  <!-- 08 [INSERTED · Tuck p7] 企业大脑 + AI 员工 -->
+  <!-- 08 BRAIN + WORKFORCE (Tuck p7) -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 05·B · BRAIN + WORKFORCE</span></div>
     <div class="content">
-      <div class="h1">一套公司资料库，<br>带着一组 <span class="hl">AI 员工</span>。</div>
-      <div class="sub">企业大脑是「记忆银行」，AI 员工是「执行大脑」——共用同一套资料，不会各说各话。</div>
+      <div class="h1">One knowledge base,<br>a whole team of <span class="hl">AI coworkers</span>.</div>
+      <div class="sub">The enterprise brain is the "memory bank"; the AI coworkers are the "execution brain" — sharing one source of truth, never contradicting each other.</div>
       <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:3vh;gap:1.1vw;">
-        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">🌐</div><div class="t" style="font-size:1.25vw;margin-top:.8vh">建站 Agent</div><div class="d" style="font-size:.82vw">独立站 · 落地页 · 询盘表单</div></div>
-        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">📣</div><div class="t" style="font-size:1.25vw;margin-top:.8vh">社媒 / 内容 Agent</div><div class="d" style="font-size:.82vw">GEO 内容 · 社媒矩阵 · 口碑沉淀</div></div>
-        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">🎧</div><div class="t" style="font-size:1.25vw;margin-top:.8vh">自动客服 Agent</div><div class="d" style="font-size:.82vw">7×24 多语种接待和留资</div></div>
-        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">🧑‍🏫</div><div class="t" style="font-size:1.25vw;margin-top:.8vh">销售教练 Agent</div><div class="d" style="font-size:.82vw">话术 · 判断 · 下一步动作</div></div>
+        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">🌐</div><div class="t" style="font-size:1.2vw;margin-top:.8vh">Website Agent</div><div class="d" style="font-size:.8vw">Site · landing pages · inquiry forms</div></div>
+        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">📣</div><div class="t" style="font-size:1.2vw;margin-top:.8vh">Social & Content Agent</div><div class="d" style="font-size:.8vw">GEO content · social matrix · reputation</div></div>
+        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">🎧</div><div class="t" style="font-size:1.2vw;margin-top:.8vh">Auto-Support Agent</div><div class="d" style="font-size:.8vw">7×24 multilingual reception & capture</div></div>
+        <div class="card" style="text-align:center;padding:2.4vh 1vw"><div style="font-size:2vw">🧑‍🏫</div><div class="t" style="font-size:1.2vw;margin-top:.8vh">Sales Coach Agent</div><div class="d" style="font-size:.8vw">scripts · judgment · next action</div></div>
       </div>
       <div style="text-align:center;color:var(--accent);font-size:1.4vw;margin:1.4vh 0;">↓ ↓ ↓ ↓</div>
-      <div class="accent-bar"><div class="t">共同调用同一个 「企业大脑」 资料库</div><div class="d">工具会过时，这个大脑是你自己的资产，越用越增值。</div></div>
+      <div class="accent-bar"><div class="t">All calling the same "enterprise brain" knowledge base</div><div class="d">Tools come and go; this brain is your own asset, compounding over time.</div></div>
     </div>
-    <div class="foot"><span>Brain + Workforce · from Tuck deck p.7</span><span>08 / 18</span></div>
+    <div class="foot"><span>Brain + Workforce</span><span>08 / 17</span></div>
   </section>
 
   <!-- 09 FDE -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 06 · FORWARD DEPLOYMENT ENGINEER</span></div>
     <div class="content">
-      <div class="h1">我们抄了 Palantir<br>最贵的那一招。</div>
+      <div class="h1">We copied Palantir's<br>most <span class="hl">expensive move</span>.</div>
       <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:3vh;">
-        <div class="card"><div class="num-e">TRIANGLE ①</div><div class="t">Coach</div><div class="d">培训客户团队从「用 AI」到「管 AI」——让你的团队接得住、用得好。</div></div>
-        <div class="card"><div class="num-e">TRIANGLE ②</div><div class="t">Co-PM</div><div class="d">钻进客户业务——第一周改流程，第二周改 Agent。</div></div>
-        <div class="card"><div class="num-e">TRIANGLE ③</div><div class="t">Optimizer</div><div class="d">定期复盘、迭代、提升 ROI——常驻战友，不是一次性顾问。</div></div>
+        <div class="card"><div class="num-e">TRIANGLE ①</div><div class="t">Coach</div><div class="d">Train your team from "using AI" to "managing AI" — so they can catch it and run with it.</div></div>
+        <div class="card"><div class="num-e">TRIANGLE ②</div><div class="t">Co-PM</div><div class="d">Dive into your business — reshape process in week 1, reshape agents in week 2.</div></div>
+        <div class="card"><div class="num-e">TRIANGLE ③</div><div class="t">Optimizer</div><div class="d">Regular reviews, iteration, higher ROI — a resident teammate, not a one-off consultant.</div></div>
       </div>
       <div class="row" style="margin-top:2.6vh;gap:1.2vw;">
-        <div class="card" style="flex:1;background:var(--accent-soft)"><div class="num-e">DAY 1 – 5</div><div class="d" style="font-size:1vw;color:var(--ink)">业务诊断 · Knowledge Wiki 接入</div></div>
-        <div class="card" style="flex:1;background:var(--accent-soft)"><div class="num-e">DAY 6 – 10</div><div class="d" style="font-size:1vw;color:var(--ink)">核心 Agent 配置与训练</div></div>
-        <div class="card" style="flex:1;background:var(--accent-soft)"><div class="num-e">DAY 11 – 15</div><div class="d" style="font-size:1vw;color:var(--ink)">上线 · 监控 · 第一次复盘</div></div>
+        <div class="card" style="flex:1;background:var(--accent-soft)"><div class="num-e">DAY 1 – 5</div><div class="d" style="font-size:1vw;color:var(--ink)">Business diagnosis · Knowledge Wiki onboarding</div></div>
+        <div class="card" style="flex:1;background:var(--accent-soft)"><div class="num-e">DAY 6 – 10</div><div class="d" style="font-size:1vw;color:var(--ink)">Core agent configuration & training</div></div>
+        <div class="card" style="flex:1;background:var(--accent-soft)"><div class="num-e">DAY 11 – 15</div><div class="d" style="font-size:1vw;color:var(--ink)">Go live · monitor · first review</div></div>
       </div>
     </div>
-    <div class="foot"><span>15-Day Launch Cadence</span><span>09 / 18</span></div>
+    <div class="foot"><span>15-Day Launch Cadence</span><span>09 / 17</span></div>
   </section>
 
-  <!-- 10 DEEP SOLUTION ① 产研 -->
+  <!-- 10 DEEP SOLUTION ① R&D -->
   <section class="slide">
-    <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 07 · DEEP SOLUTION ① · 产研旗舰</span></div>
+    <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 07 · DEEP SOLUTION ① · R&D FLAGSHIP</span></div>
     <div class="content">
-      <div class="h1">AI 产研团队 <span class="hl">「8 + 1」</span> 模式</div>
+      <div class="h1">The AI R&D team — the <span class="hl">"8 + 1"</span> model</div>
       <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:2.6vh;gap:.9vw;">
-        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">PM</div><div class="t" style="font-size:1.05vw">产品经理</div><div class="d" style="font-size:.78vw">需求分析 · PRD · 产品规则</div></div>
-        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">PjM</div><div class="t" style="font-size:1.05vw">项目经理</div><div class="d" style="font-size:.78vw">进度跟踪 · 风险预警</div></div>
-        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">ARCH</div><div class="t" style="font-size:1.05vw">系统架构师</div><div class="d" style="font-size:.78vw">架构设计 · 技术选型</div></div>
-        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">DES</div><div class="t" style="font-size:1.05vw">UI / UX 设计师</div><div class="d" style="font-size:.78vw">原型 · 界面 · 规范</div></div>
-        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">FE</div><div class="t" style="font-size:1.05vw">前端工程师</div><div class="d" style="font-size:.78vw">Web / H5 / 移动端</div></div>
-        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">BE</div><div class="t" style="font-size:1.05vw">后端工程师</div><div class="d" style="font-size:.78vw">业务逻辑 · API · 数据库</div></div>
-        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">QA</div><div class="t" style="font-size:1.05vw">测试工程师</div><div class="d" style="font-size:.78vw">用例 · 自动化 · 跟踪</div></div>
-        <div class="card" style="padding:1.6vh 1vw;background:var(--accent);color:#fff"><div class="num-e" style="color:#fff">+1</div><div class="t" style="font-size:1.05vw;color:#fff">Orchestrator</div><div class="d" style="font-size:.78vw;color:#fbe7df">FDE 担任 · 总调度 · 质量把关</div></div>
+        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">PM</div><div class="t" style="font-size:1.05vw">Product Manager</div><div class="d" style="font-size:.78vw">requirements · PRD · rules</div></div>
+        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">PjM</div><div class="t" style="font-size:1.05vw">Project Manager</div><div class="d" style="font-size:.78vw">tracking · risk · coordination</div></div>
+        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">ARCH</div><div class="t" style="font-size:1.05vw">System Architect</div><div class="d" style="font-size:.78vw">architecture · tech choices</div></div>
+        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">DES</div><div class="t" style="font-size:1.05vw">UI / UX Designer</div><div class="d" style="font-size:.78vw">prototype · UI · specs</div></div>
+        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">FE</div><div class="t" style="font-size:1.05vw">Frontend</div><div class="d" style="font-size:.78vw">Web / H5 / mobile</div></div>
+        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">BE</div><div class="t" style="font-size:1.05vw">Backend</div><div class="d" style="font-size:.78vw">logic · API · database</div></div>
+        <div class="card" style="padding:1.6vh 1vw"><div class="num-e">QA</div><div class="t" style="font-size:1.05vw">Test Engineer</div><div class="d" style="font-size:.78vw">cases · automation · tracking</div></div>
+        <div class="card" style="padding:1.6vh 1vw;background:var(--accent);color:#fff"><div class="num-e" style="color:#fff">+1</div><div class="t" style="font-size:1.05vw;color:#fff">Orchestrator</div><div class="d" style="font-size:.78vw;color:#fbe7df">played by the FDE · dispatch · quality gate</div></div>
       </div>
       <div class="row" style="margin-top:2.8vh;gap:3.5vw;">
-        <div class="stat"><div class="n">0.5</div><div class="l">团队完成 APP 上线</div></div>
-        <div class="stat"><div class="n">↓60%</div><div class="l">开发周期</div></div>
-        <div class="stat"><div class="n">↑80%</div><div class="l">代码产出</div></div>
-        <div class="stat"><div class="n">↑200%</div><div class="l">项目承接量</div></div>
+        <div class="stat"><div class="n">0.5</div><div class="l">team ships an app</div></div>
+        <div class="stat"><div class="n">↓60%</div><div class="l">dev cycle</div></div>
+        <div class="stat"><div class="n">↑80%</div><div class="l">code output</div></div>
+        <div class="stat"><div class="n">↑200%</div><div class="l">projects taken on</div></div>
       </div>
     </div>
-    <div class="foot"><span>Deep Solution ① · 产研旗舰</span><span>10 / 18</span></div>
+    <div class="foot"><span>Deep Solution ① · R&D Flagship</span><span>10 / 17</span></div>
   </section>
 
-  <!-- 11 DEEP SOLUTION ② 出海 -->
+  <!-- 11 DEEP SOLUTION ② GLOBAL -->
   <section class="slide">
-    <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 08 · DEEP SOLUTION ② · 出海旗舰</span></div>
+    <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 08 · DEEP SOLUTION ② · GLOBAL FLAGSHIP</span></div>
     <div class="content">
-      <div class="h1">AI 出海营销团队 <span class="hl">可证据化交付</span></div>
-      <div class="sub">市面 AI 营销工具只交付「草稿」。我们交付「已发布、已核验、已归档」的真实运营动作。</div>
+      <div class="h1">The AI global-marketing team — <span class="hl">evidence-backed delivery</span></div>
+      <div class="sub">Off-the-shelf AI marketing tools ship "drafts." We ship real operational actions — published, verified, archived.</div>
       <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:2.4vh;gap:.9vw;">
-        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">MU · 营销主管</div><div class="d" style="font-size:.82vw">任务编排 · 优先级调度</div></div>
-        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">HU · 社群情报官</div><div class="d" style="font-size:.82vw">海外社群侦察 · Pain Map</div></div>
-        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">JK · 内容包装</div><div class="d" style="font-size:.82vw">研究 → 可执行素材</div></div>
-        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">EL · 社媒发布官</div><div class="d" style="font-size:.82vw">X / LinkedIn / Facebook</div></div>
-        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">TO · 博客发布官</div><div class="d" style="font-size:.82vw">SEO 博客 · 发布优先</div></div>
-        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">JE · 用户激活官</div><div class="d" style="font-size:.82vw">EDM 群选 · 发送 · 回写</div></div>
-        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">PE · QA 验收官</div><div class="d" style="font-size:.82vw">PASS / FAIL / BLOCKED</div></div>
-        <div class="card" style="padding:1.5vh 1vw;background:var(--accent);color:#fff"><div class="num-e" style="color:#fff">KA · Truth Gate</div><div class="d" style="font-size:.82vw;color:#fbe7df">终极核验 · 有证据才完成</div></div>
+        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">MU · Marketing Lead</div><div class="d" style="font-size:.82vw">task orchestration · prioritization</div></div>
+        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">HU · Community Intel</div><div class="d" style="font-size:.82vw">overseas scouting · Pain Map</div></div>
+        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">JK · Content Packaging</div><div class="d" style="font-size:.82vw">research → ready-to-run assets</div></div>
+        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">EL · Social Publisher</div><div class="d" style="font-size:.82vw">X / LinkedIn / Facebook</div></div>
+        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">TO · Blog Publisher</div><div class="d" style="font-size:.82vw">SEO blog · publish-first</div></div>
+        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">JE · User Activation</div><div class="d" style="font-size:.82vw">EDM select · send · write-back</div></div>
+        <div class="card" style="padding:1.5vh 1vw"><div class="num-e">PE · QA Gate</div><div class="d" style="font-size:.82vw">PASS / FAIL / BLOCKED</div></div>
+        <div class="card" style="padding:1.5vh 1vw;background:var(--accent);color:#fff"><div class="num-e" style="color:#fff">KA · Truth Gate</div><div class="d" style="font-size:.82vw;color:#fbe7df">final check · done only with evidence</div></div>
       </div>
       <div class="row" style="margin-top:2.4vh;gap:.8vw;justify-content:space-between;">
-        <span class="pill">STAGE 1 情报采集</span><span class="pill">STAGE 2 内容包装</span><span class="pill">STAGE 3 多渠道发布</span><span class="pill">STAGE 4 QA 验收</span><span class="pill">STAGE 5 真相归档</span>
+        <span class="pill">STAGE 1 Intel</span><span class="pill">STAGE 2 Packaging</span><span class="pill">STAGE 3 Publish</span><span class="pill">STAGE 4 QA</span><span class="pill">STAGE 5 Truth archive</span>
       </div>
     </div>
-    <div class="foot"><span>Deep Solution ② · 出海旗舰</span><span>11 / 18</span></div>
+    <div class="foot"><span>Deep Solution ② · Global Flagship</span><span>11 / 17</span></div>
   </section>
 
   <!-- 12 PROOF -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 09 · PROOF</span></div>
     <div class="content">
-      <div class="h1">真实客户成果——<br>不是概念，是 <span class="hl">结果</span>。</div>
+      <div class="h1">Real customer outcomes —<br>not concepts, <span class="hl">results</span>.</div>
       <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:3vh;">
-        <div class="card"><div class="num-e">CASE · 01</div><div class="t">某电商创业公司</div><div class="d"><b>痛点</b> 3 名核心成员，3 个月内 APP 从 0 到 1。<br><b>解法</b> AI 产研团队全程承接，零专职开发招聘。</div><div class="d" style="color:var(--accent);margin-top:1vh">✓ 0.5 团队完成上线　✓ 开发周期 ↓60%　✓ 顺利完成融资</div></div>
-        <div class="card"><div class="num-e">CASE · 02</div><div class="t">某连锁餐饮企业</div><div class="d"><b>痛点</b> 传统行业，无技术团队，要做数字化转型。<br><b>解法</b> 搭建点餐 / 会员 / 数据分析三套系统，仅 3 人管理。</div><div class="d" style="color:var(--accent);margin-top:1vh">✓ 运营效率 ↑45%　✓ 传统餐饮跑通数字化</div></div>
-        <div class="card"><div class="num-e">CASE · 03</div><div class="t">某外包公司</div><div class="d"><b>痛点</b> 项目积压、产能不足、交付延期、客户流失。<br><b>解法</b> AI 产研团队接入，开发交付率倍增。</div><div class="d" style="color:var(--accent);margin-top:1vh">✓ 项目承接 ↑200%　✓ 代码产出 ↑80%　✓ 零新增人力</div></div>
+        <div class="card"><div class="num-e">CASE · 01</div><div class="t">An e-commerce startup</div><div class="d"><b>Pain</b> 3 core members, app 0→1 in 3 months.<br><b>Fix</b> AI R&D team owned the build, zero dev hires.</div><div class="d" style="color:var(--accent);margin-top:1vh">✓ 0.5 team shipped　✓ dev cycle ↓60%　✓ closed its round</div></div>
+        <div class="card"><div class="num-e">CASE · 02</div><div class="t">A restaurant chain</div><div class="d"><b>Pain</b> traditional, no tech team, needs to go digital.<br><b>Fix</b> built ordering / membership / analytics — run by just 3 people.</div><div class="d" style="color:var(--accent);margin-top:1vh">✓ ops efficiency ↑45%　✓ went fully digital</div></div>
+        <div class="card"><div class="num-e">CASE · 03</div><div class="t">A software agency</div><div class="d"><b>Pain</b> backlog, capacity crunch, late delivery, churn.<br><b>Fix</b> AI R&D team plugged in, doubled delivery throughput.</div><div class="d" style="color:var(--accent);margin-top:1vh">✓ projects ↑200%　✓ code output ↑80%　✓ zero added headcount</div></div>
       </div>
     </div>
-    <div class="foot"><span>Proof</span><span>12 / 18</span></div>
+    <div class="foot"><span>Proof</span><span>12 / 17</span></div>
   </section>
 
-  <!-- 13 [INSERTED · Tuck p9] IVD 案例深挖 -->
+  <!-- 13 DEEP CASE IVD (Tuck p9) -->
   <section class="slide">
-    <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 09·B · DEEP CASE · 医疗器械 IVD</span></div>
+    <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 09·B · DEEP CASE · MEDICAL IVD</span></div>
     <div class="content">
-      <div class="kicker">案例 · 医疗器械销售公司（IVD 区域经销商）</div>
-      <div class="h1" style="font-size:3.1vw;margin-top:1vh;">企业大脑 + AI 销售 Coach：<span class="hl">一次拜访录音，自动变成话术、判断和下一步</span>。</div>
-      <div class="card" style="background:var(--paper-2);text-align:center;margin-top:2.4vh;padding:1.6vh 1vw"><div class="t" style="font-size:1.2vw">🖥️ 客户办公室 · Mac Mini 本地私有化部署</div><div class="d" style="font-size:.85vw">M2 / M4 · 16GB · 512GB–1TB · Docker 统一部署 · 开机自启 · 数据不出门</div></div>
+      <div class="kicker">Case · Medical-device distributor (regional IVD)</div>
+      <div class="h1" style="font-size:2.7vw;margin-top:1vh;">Enterprise brain + AI Sales Coach: <span class="hl">one visit recording becomes scripts, judgment, and the next step</span>.</div>
+      <div class="card" style="background:var(--paper-2);text-align:center;margin-top:2.4vh;padding:1.6vh 1vw"><div class="t" style="font-size:1.15vw">🖥️ On-site · Mac Mini local private deployment</div><div class="d" style="font-size:.85vw">M2 / M4 · 16GB · 512GB–1TB · Docker · auto-start · data stays in-house</div></div>
       <div class="row" style="margin-top:1.8vh;gap:.8vw;align-items:center;justify-content:center;">
-        <div class="card" style="flex:1;text-align:center"><div style="font-size:1.6vw">🎙️</div><div class="t" style="font-size:1.05vw">安克录音豆</div><div class="d" style="font-size:.78vw">销售拜访 · 随身录音</div></div>
+        <div class="card" style="flex:1;text-align:center"><div style="font-size:1.6vw">🎙️</div><div class="t" style="font-size:1.05vw">Anker recorder</div><div class="d" style="font-size:.78vw">field visit · wearable recording</div></div>
         <div style="color:var(--accent);font-size:1.4vw">→</div>
-        <div class="card" style="flex:1;text-align:center"><div style="font-size:1.6vw">📝</div><div class="t" style="font-size:1.05vw">飞书语音转写</div><div class="d" style="font-size:.78vw">录音自动转文字 · 结构化纪要</div></div>
+        <div class="card" style="flex:1;text-align:center"><div style="font-size:1.6vw">📝</div><div class="t" style="font-size:1.05vw">Feishu transcription</div><div class="d" style="font-size:.78vw">auto speech-to-text · structured minutes</div></div>
         <div style="color:var(--accent);font-size:1.4vw">→</div>
-        <div class="card" style="flex:1;text-align:center"><div style="font-size:1.6vw">📱</div><div class="t" style="font-size:1.05vw">钉钉 / 飞书 销售端</div><div class="d" style="font-size:.78vw">H5 记拜访 · 机器人提醒卡片</div></div>
+        <div class="card" style="flex:1;text-align:center"><div style="font-size:1.6vw">📱</div><div class="t" style="font-size:1.05vw">DingTalk / Feishu app</div><div class="d" style="font-size:.78vw">H5 visit log · reminder cards</div></div>
       </div>
       <div class="accent-bar" style="text-align:left;margin-top:1.8vh;padding:1.8vh 1.6vw;background:var(--accent-soft);color:var(--ink)">
-        <div class="t" style="font-size:1.35vw;color:var(--accent)">🧑‍🏫 AI 销售 Coach 中台（openclaw 驱动 · GPT-5.4）</div>
-        <div style="margin-top:1vh;display:flex;gap:.6vw;flex-wrap:wrap"><span class="pill">拜访准备</span><span class="pill">话术建议</span><span class="pill">客户判断</span><span class="pill">下一步动作</span><span class="pill">医疗合规检查</span></div>
+        <div class="t" style="font-size:1.3vw;color:var(--accent)">🧑‍🏫 AI Sales Coach hub (powered by openclaw · GPT-5.4)</div>
+        <div style="margin-top:1vh;display:flex;gap:.6vw;flex-wrap:wrap"><span class="pill">Visit prep</span><span class="pill">Script suggestions</span><span class="pill">Customer read</span><span class="pill">Next action</span><span class="pill">Medical compliance</span></div>
       </div>
       <div class="card" style="margin-top:1.4vh;padding:1.4vh 1.4vw;background:#eef3ea">
-        <div class="num-e" style="color:#3f8a5a">🧠 企业大脑 · 本地知识库（数据库 + 文件存储）</div>
-        <div style="margin-top:.9vh;display:flex;gap:.7vw;flex-wrap:wrap"><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">产品知识库</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">客户画像</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">经销商画像</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">拜访录音纪要</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">合规规则库</span></div>
+        <div class="num-e" style="color:#3f8a5a">🧠 Enterprise brain · local knowledge base (DB + file store)</div>
+        <div style="margin-top:.9vh;display:flex;gap:.7vw;flex-wrap:wrap"><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">Product KB</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">Customer profiles</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">Distributor profiles</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">Visit minutes</span><span class="pill" style="border-color:#3f8a5a;color:#3f8a5a">Compliance rules</span></div>
       </div>
     </div>
-    <div class="foot"><span>Deep Case · IVD · from Tuck deck p.9</span><span>13 / 18</span></div>
+    <div class="foot"><span>Deep Case · IVD</span><span>13 / 17</span></div>
   </section>
 
   <!-- 14 MISSION CONTROL -->
   <section class="slide dark">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span style="color:#8a8272">§ 10 · MISSION CONTROL</span></div>
     <div class="content">
-      <div class="disp" style="color:var(--paper)">看得见的<br><span class="hl">Agent 团队</span>。</div>
+      <div class="disp" style="color:var(--paper)">A visible<br><span class="hl">AI team</span>.</div>
       <div class="row" style="margin-top:3vh;gap:3.4vw;">
         <div class="stat"><div class="n">12</div><div class="l" style="color:#8a8272">Online Agents</div></div>
         <div class="stat"><div class="n">327</div><div class="l" style="color:#8a8272">Tasks Today</div></div>
@@ -325,86 +306,70 @@
         <div class="stat"><div class="n">84h</div><div class="l" style="color:#8a8272">Hours Saved</div></div>
       </div>
       <div class="body" style="color:#b8b0a2;margin-top:3vh;font-family:var(--mono);font-size:.95vw;letter-spacing:.05em">
-        AI 客服 · #01　运行中 ｜ 已处理 142 单<br>
-        AI 销售 · #02　运行中 ｜ 跟进 38 线索<br>
-        AI 内容 · #03　待审核 ｜ 草稿 7 篇<br>
-        AI 程序 · #04　运行中 ｜ 提交 14 PR
+        AI Support · #01　running ｜ 142 tickets handled<br>
+        AI Sales · #02　running ｜ 38 leads in follow-up<br>
+        AI Content · #03　pending review ｜ 7 drafts<br>
+        AI Engineer · #04　running ｜ 14 PRs submitted
       </div>
     </div>
-    <div class="foot" style="color:#8a8272"><span>OpenClaw · Agent Team Console · Live</span><span>14 / 18</span></div>
+    <div class="foot" style="color:#8a8272"><span>OpenClaw · Agent Team Console · Live</span><span>14 / 17</span></div>
   </section>
 
   <!-- 15 DELIVERY STACK -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 11 · DELIVERY STACK</span></div>
     <div class="content">
-      <div class="h1">从开箱即用<br>到 <span class="hl">持续优化</span>。</div>
-      <div class="sub">技术底座：OpenClaw + Hermes 架构。</div>
+      <div class="h1">From out-of-the-box<br>to <span class="hl">continuous optimization</span>.</div>
+      <div class="sub">Tech foundation: OpenClaw + Hermes architecture.</div>
       <div class="grid" style="grid-template-columns:repeat(5,1fr);margin-top:3vh;gap:1vw;">
-        <div class="card"><div class="num-e">上线速度</div><div class="t" style="font-size:1.15vw">15 天开箱即用</div></div>
-        <div class="card"><div class="num-e">稳定性</div><div class="t" style="font-size:1.15vw">99% 可用性保障</div></div>
-        <div class="card"><div class="num-e">交付方式</div><div class="t" style="font-size:1.15vw">SOP + FDE 驻场 + 复盘</div></div>
-        <div class="card"><div class="num-e">持续赋能</div><div class="t" style="font-size:1.15vw">AI 教练 + 进阶训练</div></div>
-        <div class="card" style="background:var(--accent-soft)"><div class="num-e">数据主权</div><div class="t" style="font-size:1.15vw">数据 / 图谱 / 逻辑归客户</div></div>
+        <div class="card"><div class="num-e">SPEED</div><div class="t" style="font-size:1.1vw">Live in 15 days</div></div>
+        <div class="card"><div class="num-e">RELIABILITY</div><div class="t" style="font-size:1.1vw">99% uptime</div></div>
+        <div class="card"><div class="num-e">DELIVERY</div><div class="t" style="font-size:1.1vw">SOP + on-site FDE + reviews</div></div>
+        <div class="card"><div class="num-e">ENABLEMENT</div><div class="t" style="font-size:1.1vw">AI coach + advanced training</div></div>
+        <div class="card" style="background:var(--accent-soft)"><div class="num-e">DATA SOVEREIGNTY</div><div class="t" style="font-size:1.1vw">Data / graph / logic owned by you</div></div>
       </div>
     </div>
-    <div class="foot"><span>Delivery Stack</span><span>15 / 18</span></div>
+    <div class="foot"><span>Delivery Stack</span><span>15 / 17</span></div>
   </section>
 
   <!-- 16 WHO NEEDS US -->
   <section class="slide">
     <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 12 · WHO NEEDS US</span></div>
     <div class="content">
-      <div class="h1">五类客户画像——<br>对号入座。</div>
+      <div class="h1">Five customer profiles —<br>find yourself.</div>
       <div class="grid" style="grid-template-columns:repeat(5,1fr);margin-top:3vh;gap:.9vw;">
-        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">01</div><div class="t" style="font-size:1.05vw">初创 / 创业公司</div><div class="d" style="font-size:.8vw">团队小、预算紧、要快速 MVP → AI 产研团队 0.5 团队跑通 APP</div></div>
-        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">02</div><div class="t" style="font-size:1.05vw">传统企业转型</div><div class="d" style="font-size:.8vw">无技术团队，要会员 / CRM / 数据 → 直接拿一整套数字化能力</div></div>
-        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">03</div><div class="t" style="font-size:1.05vw">外包 / 项目制</div><div class="d" style="font-size:.8vw">项目多、产能瓶颈 → 承接量 +200%，无需扩编</div></div>
-        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">04</div><div class="t" style="font-size:1.05vw">想出海的企业</div><div class="d" style="font-size:.8vw">无海外营销团队 → AI 出海营销团队可证据化获客</div></div>
-        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">05</div><div class="t" style="font-size:1.05vw">已有团队提效</div><div class="d" style="font-size:.8vw">重复劳动消耗高 → 人 + AI 协同，聚焦高价值决策</div></div>
+        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">01</div><div class="t" style="font-size:1.05vw">Startups</div><div class="d" style="font-size:.8vw">small team, tight budget, fast MVP → 0.5 team ships an app</div></div>
+        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">02</div><div class="t" style="font-size:1.05vw">Traditional → digital</div><div class="d" style="font-size:.8vw">no tech team; need membership / CRM / data → a full digital capability, no hiring</div></div>
+        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">03</div><div class="t" style="font-size:1.05vw">Agencies / project shops</div><div class="d" style="font-size:.8vw">many projects, capacity ceiling → +200% throughput, no headcount</div></div>
+        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">04</div><div class="t" style="font-size:1.05vw">Going global</div><div class="d" style="font-size:.8vw">no overseas marketing team → evidence-backed acquisition</div></div>
+        <div class="card" style="padding:1.8vh 1vw"><div class="num-e">05</div><div class="t" style="font-size:1.05vw">Teams wanting leverage</div><div class="d" style="font-size:.8vw">high repetitive load → human + AI, focus on high-value decisions</div></div>
       </div>
     </div>
-    <div class="foot"><span>Who Needs Us</span><span>16 / 18</span></div>
+    <div class="foot"><span>Who Needs Us</span><span>16 / 17</span></div>
   </section>
 
-  <!-- 17 PRICING -->
-  <section class="slide">
-    <div class="chrome"><span class="brand">AGENTIFY AI</span><span>§ 13 · PRICING</span></div>
-    <div class="content">
-      <div class="h1">按需选择，<br>即配 <span class="hl">即用</span>。</div>
-      <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:3vh;gap:1vw;">
-        <div class="card"><div class="num-e">ENTRY</div><div class="t" style="font-size:1.2vw">AI Enterprise Wiki</div><div class="stat" style="margin:1vh 0"><div class="n" style="font-size:2.4vw">¥5,000</div><div class="l">/ 月 · 按月订阅</div></div><div class="d" style="font-size:.82vw">单 Agent 知识库助手，快速搭建企业智能大脑。适合 · 初创 / 部门试点</div></div>
-        <div class="card"><div class="num-e">ADVISOR</div><div class="t" style="font-size:1.2vw">AI 项目顾问</div><div class="stat" style="margin:1vh 0"><div class="n" style="font-size:2.4vw">¥10,000</div><div class="l">/ 月 · 按月订阅</div></div><div class="d" style="font-size:.82vw">认知升级 + 落地部署，真人顾问陪跑。适合 · 初创 / 部门试点</div></div>
-        <div class="card" style="background:var(--accent);color:#fff"><div class="num-e" style="color:#fff">RECOMMENDED</div><div class="t" style="font-size:1.2vw;color:#fff">AI 产研团队</div><div class="stat" style="margin:1vh 0"><div class="n" style="font-size:2.4vw;color:#fff">¥30,000</div><div class="l" style="color:#fbe7df">/ 月 · 首推方案</div></div><div class="d" style="font-size:.82vw;color:#fbe7df">8+1 全栈落地 + 持续交付。适合 · 成长型 / 产品团队</div></div>
-        <div class="card"><div class="num-e">ENTERPRISE</div><div class="t" style="font-size:1.2vw">定制化 AI Team</div><div class="stat" style="margin:1vh 0"><div class="n" style="font-size:2.4vw">$50K+</div><div class="l">/ 季度起 · 季签</div></div><div class="d" style="font-size:.82vw">深度定制 + 专属团队。适合 · 中大型 / 核心业务</div></div>
-      </div>
-      <div class="body" style="text-align:center;margin-top:2.4vh;font-size:1vw">不知从哪开始 → ENTRY　·　团队没用过 AI → ＋ ADVISOR　·　想做产品 → RECOMMENDED　·　核心业务 → ENTERPRISE</div>
-    </div>
-    <div class="foot"><span>Pricing</span><span>17 / 18</span></div>
-  </section>
-
-  <!-- 18 CLOSE -->
+  <!-- 17 CLOSE -->
   <section class="slide dark">
     <div class="chrome"><span style="color:#8a8272">— LET'S BUILD YOUR AI TEAM —</span><span class="brand">AGENTIFY AI</span></div>
     <div class="content">
-      <div class="disp" style="color:var(--paper)">把你的 AI 团队，<br><span class="hl">带到办公室</span>。</div>
-      <div class="lead" style="color:#b8b0a2;margin-top:2vh">四种合作方式，从轻到重。</div>
+      <div class="disp" style="color:var(--paper)">Bring your AI team<br><span class="hl">into the office</span>.</div>
+      <div class="lead" style="color:#b8b0a2;margin-top:2vh">Four ways to work together, light to heavy.</div>
       <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:3vh;gap:1vw;">
-        <div class="card" style="background:#241f18;color:var(--paper)"><div class="num-e">01</div><div class="t" style="font-size:1.15vw;color:var(--paper)">岗位试点</div><div class="d" style="font-size:.82vw;color:#b8b0a2">15 天上线 · 选 1 个 AI 岗位 · 跑通 ROI</div></div>
-        <div class="card" style="background:#241f18;color:var(--paper)"><div class="num-e">02</div><div class="t" style="font-size:1.15vw;color:var(--paper)">AI 产研团队订阅</div><div class="d" style="font-size:.82vw;color:#b8b0a2">8+1 团队 · 按月订阅 · FDE 驻场</div></div>
-        <div class="card" style="background:#241f18;color:var(--paper)"><div class="num-e">03</div><div class="t" style="font-size:1.15vw;color:var(--paper)">AI 出海营销订阅</div><div class="d" style="font-size:.82vw;color:#b8b0a2">9 个营销 Agent · 海外获客可证据化</div></div>
-        <div class="card" style="background:var(--accent);color:#fff"><div class="num-e" style="color:#fff">04</div><div class="t" style="font-size:1.15vw;color:#fff">企业级深度交付</div><div class="d" style="font-size:.82vw;color:#fbe7df">多团队 + 自定义 Agent + 私有化部署</div></div>
+        <div class="card" style="background:#241f18;color:var(--paper)"><div class="num-e">01</div><div class="t" style="font-size:1.15vw;color:var(--paper)">Role pilot</div><div class="d" style="font-size:.82vw;color:#b8b0a2">live in 15 days · pick 1 AI role · prove ROI</div></div>
+        <div class="card" style="background:#241f18;color:var(--paper)"><div class="num-e">02</div><div class="t" style="font-size:1.15vw;color:var(--paper)">AI R&D team subscription</div><div class="d" style="font-size:.82vw;color:#b8b0a2">8+1 team · monthly · on-site FDE</div></div>
+        <div class="card" style="background:#241f18;color:var(--paper)"><div class="num-e">03</div><div class="t" style="font-size:1.15vw;color:var(--paper)">AI global-marketing subscription</div><div class="d" style="font-size:.82vw;color:#b8b0a2">9 marketing agents · evidence-backed acquisition</div></div>
+        <div class="card" style="background:var(--accent);color:#fff"><div class="num-e" style="color:#fff">04</div><div class="t" style="font-size:1.15vw;color:#fff">Enterprise deep delivery</div><div class="d" style="font-size:.82vw;color:#fbe7df">multi-team + custom agents + private deployment</div></div>
       </div>
-      <div class="lead" style="color:var(--paper);margin-top:3vh">预约 30 分钟 FDE 评估会——跟工程师聊，不是销售。</div>
+      <div class="lead" style="color:var(--paper);margin-top:3vh">Book a 30-minute FDE assessment — talk to an engineer, not a salesperson.</div>
       <div class="kicker" style="margin-top:1.4vh">hello@agentify.ai　·　agentify.ai</div>
     </div>
-    <div class="foot" style="color:#8a8272"><span>Let's build your AI team</span><span>18 / 18</span></div>
+    <div class="foot" style="color:#8a8272"><span>Let's build your AI team</span><span>17 / 17</span></div>
   </section>
 
 </div>
 
-<div class="counter" id="counter">01 / 18</div>
-<div class="hint">← → 翻页 · 滚动</div>
+<div class="counter" id="counter">01 / 17</div>
+<div class="hint">← → navigate · scroll</div>
 
 <script>
   const deck=document.getElementById('deck'), counter=document.getElementById('counter');
@@ -419,7 +384,6 @@
     if(e.key==='Home'){deck.scrollTo({left:0,behavior:'smooth'});}
     if(e.key==='End'){deck.scrollTo({left:(N-1)*window.innerWidth,behavior:'smooth'});}
   });
-  // wheel: vertical wheel -> horizontal paging (debounced)
   let wlock=false;
   deck.addEventListener('wheel',e=>{
     if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();if(wlock)return;wlock=true;go(e.deltaY>0?1:-1);setTimeout(()=>wlock=false,520);}
